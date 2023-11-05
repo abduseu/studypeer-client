@@ -16,7 +16,8 @@ span{
 }
 
 .navbtn{
-    padding: 15px 22px;
+    padding: 12px 18px;
     background-color: black;
     color: white;
+    display: block;
 }

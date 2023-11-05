@@ -2,8 +2,8 @@ const Footer = () => {
     return (
         <div className="footer justify-between py-10">
             <aside>
-                <h2 className="text-4xl font-bold flex items-center gap-2">STUDYPEER</h2>
-                <p>STUDYPEER<br />Online Assignment Marking System</p>
+                <h2 className="text-3xl font-semibold flex items-center">STUDY<span className="font-light text-white">PEER</span></h2>
+                <p>Online Assignment Marking System</p>
             </aside>
             <nav>
                 <header className="footer-title">Services</header>

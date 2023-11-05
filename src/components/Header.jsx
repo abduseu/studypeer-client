@@ -11,14 +11,12 @@ const Header = () => {
     const links = <>
         <li><NavLink to="/allassignment">All Assignment</NavLink></li>
         <li><NavLink to="/register">Register</NavLink></li>
-        {/* <li><NavLink to="/login" className="navbtn rounded-lg">Login</NavLink></li> */}
     </>
     const linksPrivate = <>
         <li><NavLink to="/allassignments">All Assignment</NavLink></li>
         <li><NavLink to="/assignments">Create Assignment</NavLink></li>
         <li><NavLink to="/assignments">My Assignment</NavLink></li>
         <li><NavLink to="/assignments">Submited Assignment</NavLink></li>
-        {/* <li><NavLink onClick={handleSignout} className="navbtn rounded-lg">Signout</NavLink></li> */}
     </>
 
     return (
@@ -52,8 +50,8 @@ const Header = () => {
             </div>
             
             {/* Menu */}
-            <div className="flex justify-center p-4 bg-slate-100 text-blue-900 rounded-lg">
-                <ul className={`md:space-x-12 grid grid-cols-1  gap-4 md:flex list-none font-semibold text-lg uppercase`}>
+            <div className="flex justify-center p-4 bg-slate-100 navy font-semibold rounded-lg">
+                <ul className={`md:space-x-12 grid grid-cols-1 gap-4 md:flex list-none uppercase`}>
                     {user ? linksPrivate : links}
                 </ul>
             </div>

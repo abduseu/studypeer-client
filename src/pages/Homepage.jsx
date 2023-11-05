@@ -4,11 +4,9 @@ import Feature from '../components/Feature';
 const Homepage = () => {
     return (
         <div>
-            --------Start Homepage--------
             <Banner></Banner>
             <Feature></Feature>
             <Faq></Faq>
-            --------End Homepage--------
         </div>
     );
 };

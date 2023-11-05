@@ -43,7 +43,7 @@ const Faq = () => {
 
                 </div>
                 <p className="font-inter mx-auto mt-12 text-center text-base text-gray-500">
-                    Can’t find the answer you’re looking for? contact to our <a href="" className="text-[black]">support.</a>
+                    Can’t find the answer you’re looking for? contact to our support.
                 </p>
             </div>
         </section>

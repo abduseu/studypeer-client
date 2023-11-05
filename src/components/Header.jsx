@@ -50,7 +50,7 @@ const Header = () => {
             </div>
             
             {/* Menu */}
-            <div className="flex justify-center p-4 bg-slate-100 navy font-semibold rounded-lg">
+            <div className="flex justify-center p-4 bg-slate-100 font-semibold rounded-lg">
                 <ul className={`md:space-x-12 grid grid-cols-1 gap-4 md:flex list-none uppercase`}>
                     {user ? linksPrivate : links}
                 </ul>

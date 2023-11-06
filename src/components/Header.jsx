@@ -1,10 +1,18 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../providers/AuthProvider";
 
 const Header = () => {
-    const user = false;
+    const { user, logOut } = useContext(AuthContext)
 
     const handleSignout = () => {
-        console.log('signout')
+        logOut()
+            .then(() => {
+                console.log('Signout Successful!')
+            })
+            .catch((error) => {
+                console.log(error.message)
+            });
     }
 
     //Navlink
@@ -38,7 +46,7 @@ const Header = () => {
                                             </div>
                                         </label>
                                         <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded">
-                                            <li>{'user.displayName'}</li>
+                                            <li className="whitespace-nowrap">{user.displayName}</li>
                                         </ul>
                                     </div>
                                     <li><Link onClick={handleSignout} className="navbtn rounded-lg">Signout</Link></li>
@@ -48,7 +56,7 @@ const Header = () => {
                     </div>
                 </div>
             </div>
-            
+
             {/* Menu */}
             <div className="flex justify-center p-4 bg-gray font-semibold rounded-lg">
                 <ul className={`md:space-x-12 grid grid-cols-1 gap-4 md:flex list-none uppercase`}>

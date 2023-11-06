@@ -19,6 +19,7 @@ import TakeAssignment from "./pages/TakeAssignment";
 import MyAssignment from "./pages/MyAssignment";
 import SubmittedAssignment from "./pages/SubmittedAssignment";
 import AllAssignment from "./pages/AllAssignment";
+import ManageAssignment from "./pages/ManageAssignment";
 
 
 
@@ -33,8 +34,14 @@ const router = createBrowserRouter([
         element: <Homepage></Homepage>,
       },
       {
+        path: '/manage',
+        element: <ManageAssignment></ManageAssignment>,
+        loader: ()=>fetch(`http://localhost:5000/assignments`)
+      },
+      {
         path: '/all',
         element: <AllAssignment></AllAssignment>,
+        loader: ()=>fetch(`http://localhost:5000/assignments`)
       },
       {
         path: '/create',

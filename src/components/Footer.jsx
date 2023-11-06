@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Footer = () => {
     return (
         <div className="footer justify-between py-10">
@@ -7,7 +9,7 @@ const Footer = () => {
             </aside>
             <nav>
                 <header className="footer-title">Services</header>
-                <a className="link link-hover">Assignment</a>
+                <Link to={'/manage'} className="link link-hover">Manage Assignment</Link>
                 <a className="link link-hover">Design</a>
                 <a className="link link-hover">Marketing</a>
                 <a className="link link-hover">Advertisement</a>

@@ -6,11 +6,10 @@
 body{
     font-family: 'Poppins', sans-serif;
 }
-
 form h3{
     margin-left: 4px;
+    font-weight: 500;
 }
-
 span{
     color: navy;
 }

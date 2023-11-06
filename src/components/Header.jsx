@@ -17,14 +17,14 @@ const Header = () => {
 
     //Navlink
     const links = <>
-        <li><NavLink to="/allassignment">All Assignment</NavLink></li>
+        <li><NavLink to="/all">All Assignment</NavLink></li>
         <li><NavLink to="/register">Register</NavLink></li>
     </>
     const linksPrivate = <>
-        <li><NavLink to="/allassignments">All Assignment</NavLink></li>
-        <li><NavLink to="/assignments">Create Assignment</NavLink></li>
-        <li><NavLink to="/assignments">My Assignment</NavLink></li>
-        <li><NavLink to="/assignments">Submited Assignment</NavLink></li>
+        <li><NavLink to="/all">All Assignment</NavLink></li>
+        <li><NavLink to="/create">Create Assignment</NavLink></li>
+        <li><NavLink to="/my">My Assignment</NavLink></li>
+        <li><NavLink to="/submitted">Submited Assignment</NavLink></li>
     </>
 
     return (

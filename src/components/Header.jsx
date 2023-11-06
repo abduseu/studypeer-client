@@ -36,7 +36,7 @@ const Header = () => {
                 </div>
                 <div className="mt-6 md:mt-0">
                     <div>
-                        <ul className={`md:space-x-12 flex list-none font-semibold text-lg uppercase`}>
+                        <ul className={`flex gap-2 font-semibold list-none uppercase`}>
                             {user ?
                                 <>
                                     <div className="dropdown dropdown-hover">

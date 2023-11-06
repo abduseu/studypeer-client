@@ -1,6 +1,11 @@
-const CreateAssignment = () => {
+import { useState } from "react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
-    const handleCreate =(e)=>{
+const CreateAssignment = () => {
+    const [startDate, setStartDate] = useState(new Date());
+
+    const handleCreate = (e) => {
         e.preventDefault()
         const form = e.target
         const title = form.title.value
@@ -8,7 +13,8 @@ const CreateAssignment = () => {
         const difficulty = form.difficulty.value
         const marks = form.marks.value
         const image = form.image.value
-        const dueDate = form.dueDate.value
+        const dueDate = startDate
+
         const createAssign = { title, description, difficulty, marks, image, dueDate }
 
         console.log(createAssign)
@@ -48,7 +54,9 @@ const CreateAssignment = () => {
                         </div>
                         <div>
                             <h3>Due Date:</h3>
-                            <input type="date" name="dueDate" placeholder="Due Date" className="input input-bordered w-full" required />
+                            <div className="input input-bordered w-full flex items-center">
+                                <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
+                            </div>
                         </div>
                     </div>
                     <div className="text-center pt-10">

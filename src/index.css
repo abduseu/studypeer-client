@@ -14,6 +14,12 @@ span{
 .navy{
     color: navy;
 }
+.bg-navy{
+    background-color: navy;
+}
+.bg-gray{
+    background-color: #f2f2f7;
+}
 
 .active{
     color: navy;

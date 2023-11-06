@@ -9,6 +9,7 @@ import Root from "./components/Root";
 import Homepage from "./pages/Homepage";
 import ErrorPage from "./pages/ErrorPage";
 import AuthProvider from "./providers/AuthProvider";
+import Register from "./pages/Register";
 
 
 
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Homepage></Homepage>,
+      },
+      {
+        path: '/register',
+        element: <Register></Register>,
       },
     ]
   }

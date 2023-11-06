@@ -1,7 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 
 const Header = () => {
-    const user = true;
+    const user = false;
 
     const handleSignout = () => {
         console.log('signout')
@@ -37,8 +37,8 @@ const Header = () => {
                                                 <img src={user.photoURL} />
                                             </div>
                                         </label>
-                                        <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box">
-                                            <li className="py-4">{'user.displayName'}</li>
+                                        <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded">
+                                            <li>{'user.displayName'}</li>
                                         </ul>
                                     </div>
                                     <li><Link onClick={handleSignout} className="navbtn rounded-lg">Signout</Link></li>
@@ -50,7 +50,7 @@ const Header = () => {
             </div>
             
             {/* Menu */}
-            <div className="flex justify-center p-4 bg-slate-100 font-semibold rounded-lg">
+            <div className="flex justify-center p-4 bg-gray font-semibold rounded-lg">
                 <ul className={`md:space-x-12 grid grid-cols-1 gap-4 md:flex list-none uppercase`}>
                     {user ? linksPrivate : links}
                 </ul>

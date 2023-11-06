@@ -35,7 +35,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/manage',
-        element: <ManageAssignment></ManageAssignment>,
+        element: <Private><ManageAssignment></ManageAssignment></Private>,
         loader: ()=>fetch(`http://localhost:5000/assignments`)
       },
       {

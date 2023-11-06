@@ -1,7 +1,7 @@
 const Footer = () => {
     return (
         <div className="footer justify-between py-10">
-            <aside>
+            <aside className="flex flex-col justify-center h-full">
                 <h2 className="text-3xl font-semibold flex items-center">STUDY<span className="font-light text-white">PEER</span></h2>
                 <p>Online Assignment Marking System</p>
             </aside>

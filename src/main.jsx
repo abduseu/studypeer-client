@@ -18,6 +18,7 @@ import ViewAssignment from "./pages/ViewAssignment";
 import TakeAssignment from "./pages/TakeAssignment";
 import MyAssignment from "./pages/MyAssignment";
 import SubmittedAssignment from "./pages/SubmittedAssignment";
+import AllAssignment from "./pages/AllAssignment";
 
 
 
@@ -33,7 +34,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/all',
-        element: <Homepage></Homepage>,
+        element: <AllAssignment></AllAssignment>,
       },
       {
         path: '/create',

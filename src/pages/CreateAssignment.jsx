@@ -1,13 +1,18 @@
 import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import axios from 'axios';
+import useAuth from "../hooks/useAuth";
+import Swal from 'sweetalert2';
 
 const CreateAssignment = () => {
+    const { user } = useAuth()
     const [startDate, setStartDate] = useState(new Date());
 
     const handleCreate = (e) => {
         e.preventDefault()
         const form = e.target
+        const userId = user.email
         const title = form.title.value
         const description = form.description.value
         const difficulty = form.difficulty.value
@@ -15,9 +20,21 @@ const CreateAssignment = () => {
         const image = form.image.value
         const dueDate = startDate
 
-        const createAssign = { title, description, difficulty, marks, image, dueDate }
+        const createAssign = { userId, title, description, difficulty, marks, image, dueDate }
 
-        console.log(createAssign)
+
+        axios.post('http://localhost:5000/assignments', createAssign)
+            .then(res => {
+                console.log(res.data)
+                if(res.data.insertedId){
+                    Swal.fire({
+                        title: 'Successful!',
+                        text: 'Assignment has been created.',
+                        icon: 'success',
+                        confirmButtonText: 'OK'
+                      })
+                }
+            })
     }
 
     return (

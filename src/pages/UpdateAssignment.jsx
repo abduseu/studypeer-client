@@ -1,9 +1,13 @@
 import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { useLoaderData } from "react-router-dom";
 
 const UpdateAssignment = () => {
-    const [startDate, setStartDate] = useState(new Date());
+    const assignment = useLoaderData()
+    const { title, description, difficulty, marks, image, dueDate } = assignment
+    
+    const [startDate, setStartDate] = useState(new Date(dueDate));
 
     const handleUpdate = (e) => {
         e.preventDefault()
@@ -30,15 +34,15 @@ const UpdateAssignment = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                         <div>
                             <h3>Title:</h3>
-                            <input type="text" name="title" placeholder="Title" className="input input-bordered w-full" required />
+                            <input type="text" name="title" defaultValue={title} className="input input-bordered w-full" required />
                         </div>
                         <div>
                             <h3>Description:</h3>
-                            <input type="text" name="description" placeholder="Description" className="input input-bordered w-full" required />
+                            <input type="text" name="description" defaultValue={description} className="input input-bordered w-full" required />
                         </div>
                         <div>
                             <h3>Difficulty Level:</h3>
-                            <select name="difficulty" className="select select-bordered w-full">
+                            <select name="difficulty" defaultValue={difficulty} className="select select-bordered w-full">
                                 <option value="easy">Easy</option>
                                 <option value="medium">Medium</option>
                                 <option value="hard">Hard</option>
@@ -46,16 +50,16 @@ const UpdateAssignment = () => {
                         </div>
                         <div>
                             <h3>Marks:</h3>
-                            <input type="text" name="marks" placeholder="Marks" className="input input-bordered w-full" required />
+                            <input type="text" name="marks" defaultValue={marks} className="input input-bordered w-full" required />
                         </div>
                         <div>
                             <h3>Image:</h3>
-                            <input type="url" name="image" placeholder="Paste image url here" className="input input-bordered w-full" required />
+                            <input type="url" name="image" defaultValue={image} className="input input-bordered w-full" required />
                         </div>
                         <div>
                             <h3>Due Date:</h3>
                             <div className="input input-bordered w-full flex items-center">
-                                <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
+                                <DatePicker selected={startDate} defaultDate={dueDate} onChange={(date) => setStartDate(date)} />
                             </div>
                         </div>
                     </div>

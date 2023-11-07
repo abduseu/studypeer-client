@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
 
@@ -53,6 +53,7 @@ const ManageAssignment = () => {
                                         <td>{x.difficulty}</td>
                                         <td>{x.marks}</td>
                                         <td>
+                                            <Link to={`/update/${x._id}`}><button className="btn btn-xs">Update</button></Link>
                                             <button onClick={() => handleDelete(x._id)} className="btn btn-xs">X</button>
                                         </td>
                                     </tr>)

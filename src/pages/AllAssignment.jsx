@@ -1,13 +1,8 @@
-import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
+import CardAll from "../components/CardAll";
 
 const AllAssignment = () => {
-    const loadedAssignments = useLoaderData()
-    const [assignments, setAssignments] = useState(loadedAssignments)
-
-    const handleDelete = (id)=>{
-        console.log(id)
-    }
+    const assignments = useLoaderData()
 
     return (
         <div className="bg-gray rounded-lg">
@@ -15,10 +10,11 @@ const AllAssignment = () => {
                 <h2>All <span className="font-light">Assignment</span></h2>
             </div>
             <div className="pb-10 md:pb-20 px-10 md:px-20">
-                Cards will be here
-                {
-                    assignments.map(x=> <li key={x._id}>{x.title}</li>)
-                }
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full">
+                    {
+                        assignments.map(x => <CardAll key={x._id} obj={x}></CardAll>)
+                    }
+                </div>
             </div>
         </div>
     );

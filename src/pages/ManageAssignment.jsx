@@ -2,14 +2,17 @@ import axios from "axios";
 import { useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import useAuth from "../hooks/useAuth";
 
 
 const ManageAssignment = () => {
     const loadedAssignments = useLoaderData()
     const [assignments, setAssignments] = useState(loadedAssignments)
+    const { user } = useAuth()
 
-    const handleDelete = (id) => {
-        axios.delete(`http://localhost:5000/assignments/${id}`)
+    const handleDelete = (id, userId) => {
+        if(userId === user.email){
+            axios.delete(`http://localhost:5000/assignments/${id}`)
             .then(res => {
                 console.log(res.data)
                 if(res.data.deletedCount > 0){
@@ -23,7 +26,14 @@ const ManageAssignment = () => {
                     setAssignments(remaining)
                 }
             })
-
+        }else{
+            Swal.fire({
+                title: 'Wrong User!',
+                text: 'You cannot delete other users assignment',
+                icon: 'error',
+                confirmButtonText: 'OK'
+              })
+        }
     }
 
     return (
@@ -54,7 +64,7 @@ const ManageAssignment = () => {
                                         <td>{x.marks}</td>
                                         <td>
                                             <Link to={`/update/${x._id}`}><button className="btn btn-xs">Update</button></Link>
-                                            <button onClick={() => handleDelete(x._id)} className="btn btn-xs">X</button>
+                                            <button onClick={() => handleDelete(x._id, x.userId)} className="btn btn-xs">X</button>
                                         </td>
                                     </tr>)
                             }

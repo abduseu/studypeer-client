@@ -1,12 +1,15 @@
+import axios from "axios";
 import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const UpdateAssignment = () => {
     const assignment = useLoaderData()
-    const { title, description, difficulty, marks, image, dueDate } = assignment
-    
+    const { _id, title, description, difficulty, marks, image, dueDate } = assignment
+    const navigate = useNavigate()
+
     const [startDate, setStartDate] = useState(new Date(dueDate));
 
     const handleUpdate = (e) => {
@@ -22,6 +25,19 @@ const UpdateAssignment = () => {
         const updateAssign = { title, description, difficulty, marks, image, dueDate }
 
         console.log(updateAssign)
+
+        axios.put(`http://localhost:5000/assignments/${_id}`, updateAssign)
+        .then(res => {
+            console.log(res.data)
+            if (res.data.modifiedCount > 0) {
+                Swal.fire(
+                    'Updated!',
+                    'Assignment updated successfully',
+                    'success'
+                )
+                navigate('/all')
+            }
+        })
     }
 
     return (

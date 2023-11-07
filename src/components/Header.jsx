@@ -25,6 +25,7 @@ const Header = () => {
         <li><NavLink to="/create">Create Assignment</NavLink></li>
         <li><NavLink to="/my">My Assignment</NavLink></li>
         <li><NavLink to="/submitted">Submited Assignment</NavLink></li>
+        <li><NavLink to="/manage">Manage Assignment</NavLink></li>
     </>
 
     return (
@@ -59,7 +60,7 @@ const Header = () => {
 
             {/* Menu */}
             <div className="flex justify-center p-4 bg-gray font-semibold rounded-lg">
-                <ul className={`md:space-x-12 grid grid-cols-1 gap-4 md:flex list-none uppercase`}>
+                <ul className={`lg:space-x-12 grid grid-cols-1 md:grid-cols-2 gap-4 lg:flex list-none uppercase`}>
                     {user ? linksPrivate : links}
                 </ul>
             </div>

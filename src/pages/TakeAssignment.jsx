@@ -17,9 +17,11 @@ const TakeAssignment = () => {
 
         const status = "pending"
         const score = "Unchecked"
+        const studentName = user?.displayName
         const studentId = user.email
         const assingmentId = _id
-        const submitAssign = { status, studentId, assingmentId, title, dueDate, marks, score, pdfURL, quickNote  }
+        const dueDate = deadline
+        const submitAssign = { status, studentName, studentId, assingmentId, title, dueDate, marks, score, pdfURL, quickNote  }
 
         axios.post('http://localhost:5000/submitted', submitAssign)
             .then(res => {

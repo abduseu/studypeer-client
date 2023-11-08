@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import { useQuery } from '@tanstack/react-query'
 
@@ -35,7 +34,6 @@ const MyAssignment = () => {
                                 <th>Total Marks</th>
                                 <th>Result</th>
                                 <th>Feedback</th>
-                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -47,9 +45,6 @@ const MyAssignment = () => {
                                         <td>{x.marks}</td>
                                         <td>{x.score}</td>
                                         <td>{x.feedback}</td>
-                                        <td>
-                                            <Link to={`/givemark/${x._id}`}><button className="btn btn-xs">Give Mark</button></Link>
-                                        </td>
                                     </tr>)
                             }
                         </tbody>

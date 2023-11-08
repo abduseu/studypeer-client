@@ -12,7 +12,7 @@ const MyAssignment = () => {
         }
     })
     if(isPending){
-        return <span>loading...!</span>
+        return <span className="loading loading-spinner loading-lg"></span>
     }
     if(isError){
         return error.message

@@ -38,12 +38,12 @@ const router = createBrowserRouter([
       {
         path: '/manage',
         element: <Private><ManageAssignment></ManageAssignment></Private>,
-        loader: ()=>fetch(`http://localhost:5000/assignments`)
+        loader: ()=>fetch(`https://studypeer-server.vercel.app/assignments`)
       },
       {
         path: '/all',
         element: <AllAssignment></AllAssignment>,
-        loader: ()=>fetch(`http://localhost:5000/assignments`)
+        loader: ()=>fetch(`https://studypeer-server.vercel.app/assignments`)
       },
       {
         path: '/create',
@@ -52,17 +52,17 @@ const router = createBrowserRouter([
       {
         path: '/update/:id',
         element: <Private><UpdateAssignment></UpdateAssignment></Private>,
-        loader: ({params})=>fetch(`http://localhost:5000/assignments/${params.id}`)
+        loader: ({params})=>fetch(`https://studypeer-server.vercel.app/assignments/${params.id}`)
       },
       {
         path: '/view/:id',
         element: <Private><ViewAssignment></ViewAssignment></Private>,
-        loader: ({params})=>fetch(`http://localhost:5000/assignments/${params.id}`)
+        loader: ({params})=>fetch(`https://studypeer-server.vercel.app/assignments/${params.id}`)
       },
       {
         path: '/take/:id',
         element: <Private><TakeAssignment></TakeAssignment></Private>,
-        loader: ({params})=>fetch(`http://localhost:5000/assignments/${params.id}`)
+        loader: ({params})=>fetch(`https://studypeer-server.vercel.app/assignments/${params.id}`)
       },
       {
         path: '/my',
@@ -71,12 +71,12 @@ const router = createBrowserRouter([
       {
         path: '/submitted',
         element: <Private><SubmittedAssignment></SubmittedAssignment></Private>,
-        loader: ()=>fetch(`http://localhost:5000/submitted`)
+        loader: ()=>fetch(`https://studypeer-server.vercel.app/submitted`)
       },
       {
         path: '/givemark/:id',
         element: <Private><GiveMark></GiveMark></Private>,
-        loader: ({params})=>fetch(`http://localhost:5000/submitted/${params.id}`)
+        loader: ({params})=>fetch(`https://studypeer-server.vercel.app/submitted/${params.id}`)
       },
       {
         path: '/login',

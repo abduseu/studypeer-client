@@ -12,7 +12,7 @@ const ManageAssignment = () => {
 
     const handleDelete = (id, userId) => {
         if(userId === user.email){
-            axios.delete(`http://localhost:5000/assignments/${id}`)
+            axios.delete(`https://studypeer-server.vercel.app/assignments/${id}`)
             .then(res => {
                 console.log(res.data)
                 if(res.data.deletedCount > 0){

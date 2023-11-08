@@ -11,7 +11,7 @@ const AllAssignment = () => {
         const difficulty = e.target.value
 
         if(difficulty !== ""){
-            axios.get(`http://localhost:5000/difficulty/${difficulty}`)
+            axios.get(`https://studypeer-server.vercel.app/difficulty/${difficulty}`)
             .then(res => {
                 setAssignments(res.data)
             })

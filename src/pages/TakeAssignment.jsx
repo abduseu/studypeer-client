@@ -24,7 +24,7 @@ const TakeAssignment = () => {
         const dueDate = deadline
         const submitAssign = { status, studentName, studentId, assingmentId, title, dueDate, marks, score, feedback, pdfURL, quickNote  }
 
-        axios.post('http://localhost:5000/submitted', submitAssign)
+        axios.post('https://studypeer-server.vercel.app/submitted', submitAssign)
             .then(res => {
                 console.log(res.data)
                 if(res.data.insertedId){

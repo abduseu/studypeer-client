@@ -7,7 +7,7 @@ const MyAssignment = () => {
     const { isPending, isError, error, data: mySubmitted } = useQuery({
         queryKey: ['mySubmitted'],
         queryFn: async() => {
-            const res = await fetch(`http://localhost:5000/mysubmitted/${user.email}`)
+            const res = await fetch(`https://studypeer-server.vercel.app/mysubmitted/${user.email}`)
             return res.json()
         }
     })

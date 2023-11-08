@@ -18,7 +18,6 @@ const SubmittedAssignment = () => {
                                 <th>Title</th>
                                 <th>Due Date</th>
                                 <th>Total Marks</th>
-                                <th>Status</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -30,7 +29,6 @@ const SubmittedAssignment = () => {
                                         <td>{x.title}</td>
                                         <td>{x.dueDate}</td>
                                         <td>{x.marks}</td>
-                                        <td>{x.status}</td>
                                         <td>
                                             <Link to={`/givemark/${x._id}`}><button className="btn btn-xs">Give Mark</button></Link>
                                         </td>
